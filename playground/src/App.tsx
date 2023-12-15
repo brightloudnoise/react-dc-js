@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import crossfilter from 'crossfilter2';
 import * as d3 from 'd3';
-import csv from './ndx.csv';
 import {
   BarChart,
   PieChart,
@@ -9,6 +8,7 @@ import {
   LineChart,
   ChartContext,
 } from 'react-dc-js';
+//import csv from './ndx.csv';
 
 import './App.css';
 
@@ -19,6 +19,7 @@ function App() {
 
   useEffect(() => {
     (async () => {
+      const csv = import('./ndx.csv');
       const data = await d3.csv(csv);
       const dateFormatSpecifier = '%m/%d/%Y';
       const dateFormatParser = d3.timeParse(dateFormatSpecifier);
@@ -30,6 +31,7 @@ function App() {
       });
       const cx = crossfilter(data);
       setCx(cx);
+      console.log('cx', cx.all().length);
     })();
   }, []);
 
@@ -102,6 +104,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>React DC.js Playground</h1>
       <ChartContext>
         <BubbleChart
           width={990}

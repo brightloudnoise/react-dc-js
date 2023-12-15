@@ -3,21 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@craco/craco": "^5.9.0",
     "crossfilter2": "^1.5.2",
     "d3": "^7.6.1",
-    "react": "^16.8.0",
-    "react-dc-js": "file:..",
-    "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-dc-js": "file:.."
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "start": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview",
+    "test": "vite test"
   },
   "browserslist": {
     "production": [
@@ -30,5 +26,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@rollup/plugin-dsv": "^3.0.4",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.17",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.10"
   }
 }
