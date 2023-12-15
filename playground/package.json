@@ -12,9 +12,9 @@
     "react-scripts": "^3.4.1"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test"
+    "start": "craco --openssl-legacy-provider start",
+    "build": "craco --openssl-legacy-provider build",
+    "test": "craco --openssl-legacy-provider test"
   },
   "eslintConfig": {
     "extends": "react-app"
